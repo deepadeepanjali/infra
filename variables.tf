@@ -8,11 +8,15 @@ variable "resourcegroup" {
   type        = string
 }
 
-variable "kv_rbac" {
-  description = "Map of rbacc config for keyvault"
+variable "config" {
   type = map(object({
-    object_id     = string
-    role_name    = string
+    botname    = string
+    foldername = string
+    kv_secret_rbac = map(object({
+      object_id = string
+      role_name = string
+    }))
   }))
+  description = "Configuration for bot and key vault secret RBAC roles"
 }
 

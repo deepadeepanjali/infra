@@ -1,6 +1,16 @@
 keyvault = "kv-my-3210"
 resourcegroup = "rg-my"   
 
+kv_rbac = {
+   bot_owner = {
+          object_id = ""
+          role_name = "Key Vault Reader"
+         }
+   devops = {
+          object_id = ""
+          role_name = "Key Vault Reader"
+         }
+     }
 
 config = {
    "bot1" = {
